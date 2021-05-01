@@ -1,0 +1,96 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../tesi.tex
+
+%**************************************************************
+\chapter{Descrizione dello stage}
+\label{cap:descrizione-stage}
+%**************************************************************
+
+\intro{In questa sezione verrà trattato come si è svolto lo stage presso EsignWorld, considerando gli obiettivi pianificati, discutendo dei possibili rischi e la comunicazione con il tutor aziendale.}\\
+
+
+%**************************************************************
+\section{Analisi preventiva dei rischi}
+
+Durante la fase di analisi iniziale sono stati individuati alcuni possibili rischi a cui si potrà andare incontro.
+Si è quindi proceduto a elaborare delle possibili soluzioni per far fronte ad essi.\\
+
+
+\begin{risk}{Tecnologie nuove}
+    \riskdescription{le tecnologie consigliate per lo sviluppo del progetto erano nuove, causando un'inevitabile inesperienza nel loro utilizzo}
+    \risksolution{è stato predefinito un periodo iniziale di formazione personale per le tecnologie che saranno poi utilizzate per lo sviluppo, così da aver tempo di familiarizzarci leggermente e arrivare alla codifica con le nozioni base già apprese}
+\end{risk}
+\begin{risk}{Sistemi esterni}
+	\riskdescription{il progetto richiede di interfacciarsi con sistemi esterni (quali per esempio Redmine) mai usati prima e che potrebbero avere una documentazione non esaustiva}
+	\risksolution{è stata predefinito un periodo iniziale di formazione personale sui sistemi ai quali ci si interfaccerà durante la codifica, così da avere già una chiara visione del loro funzionamento e delle feature che mettono a disposizione}
+\end{risk}
+\begin{risk}{Gestione dello smart working}
+	\riskdescription{lo stage si è tenuto interamente da remoto, portando quindi a un potenziale rischio di mancanza di comunicazione, che avrebbe potuto portare a un'incerta comprensione degli obbiettivi dello stage e del progetto affrontato}
+	\risksolution{si è deciso di avere un meeting giornaliero con il tutor aziendale nelle prime fasi del progetto, così da esser sicuri che si arrivasse alle fasi finali (come la codifica) con tutti i chiarimenti necessari espletati}
+\end{risk}
+\newpage 
+%**************************************************************
+\section{Requisiti e obiettivi}
+\begin{itemize}
+	\item Obbligatori:
+		\begin{enumerate}
+			\item Studio e valutazione di componenti esterni.
+			\item Test e recupero dati dai servizi esposti da Redmine.
+			\item Analisi di vari sistemi di notifica.
+			\item Redazione di un documento di Analisi dei Requisiti.
+			\item Redazione di un documento di Progettazione Tecnica.
+			\item Sviluppo/Codifica del progetto seguendo le norme di codifica aziendali.
+			\item Redazione documentazione del progetto:
+				\begin{enumerate}
+					\item Manuale di manutenzione.
+					\item Manuale di installazione.
+					\item Documentazione API.
+				\end{enumerate}
+		\end{enumerate}
+	\item Opzionali (da valutare durante il periodo di Analisi dei Requisiti):
+	\begin{enumerate}
+		\item Integrazione dell'API con l'applicativo ENAnalytics
+		\item Integrazione della base di dati con l'applicativo Grafana
+		\item Sviluppo di test di unità e di integrità
+	\end{enumerate}
+\end{itemize}
+
+%**************************************************************
+\section{Pianificazione}
+In questa sezione sono descritte le attività pianificate per il progetto di stage, insieme alla ripartizione delle ore per ognuna di esse.
+
+	\subsection{Fasi del progetto}
+		Di seguito sono elencate le varie fasi previste per lo stage e una loro stima oraria, in ordine cronologico:
+		\begin{enumerate}
+			\item \textbf{Conoscenze generali}: approfondimento e installazione degli ambienti di sviluppo e di versionamento, e abilitazione strumenti aziendali. 
+			\item \textbf{Acquisizione degli standard aziendali}: esposizione dei servizi server Euronovate e dell'architettura della soluzione di firma Euronovate. 
+			\item \textbf{Formazione personale}: formazione sul framework target per lo sviluppo, valutazione e test di componenti esterni (sistemi di notifica come email e messaggistica istantanea), istruzione sull'applicativo Redmine e recupero dati dai suoi servizi esposti.
+			\item \textbf{Analisi dei requisiti}: analisi del tipo di informazioni da monitorare e successivamente da esporre/pubblicare, selezione dei sistemi e delle regole di notifica (e relativa frequenza di aggiornamento dati locali).
+			\item \textbf{Progettazione tecnica}: stesura della specifica tecnica del Back-End, dei servizi esposti e degli oggetti di scambio.
+			\item \textbf{Codifica}: sviluppo del prodotto seguendo le norme di codifica aziendali e potenzialmente test di unità e integrità.
+			\item \textbf{Documentazione}: stesura manuale di manutenzione, manuale di installazione, e documentazione API.
+			\item \textbf{Demo}: presentazione del prodotto sviluppato dall'azienda. 
+		\end{enumerate}
+	\subsection{Suddivisione del carico di lavoro}
+		\begin{center}
+			\begin{table}[h!]
+				\centering
+				\begin{tabular}{c | c | c | c} 
+					\textbf{Fase} & \textbf{Data inizio} & \textbf{Data fine} & \textbf{Durata}\\
+					\hline
+					Conoscenze generali   & 26/04/2021 & 04/05/2021 & 64 \\
+					Analisi dei requisiti       & 05/05/2021 & 08/05/2021 & 32 \\
+					Progettazione tecnica & 10/05/2021 & 14/05/2021 & 40 \\
+					Codifica                       & 15/05/2021 & 04/06/2021 & 144 \\
+					Documentazione         & 05/06/2021 & 09/06/2021 & 32 \\
+					Demo                           & 10/06/2021 & 10/06/2021 & 8 \\
+					\hline\hline
+					\multicolumn{3}{l}{\textbf{Totale}} & 320 \\
+				\end{tabular}
+				\vspace{0.3cm}
+				\caption{Tabella della suddivisione delle ore per ogni fase del progetto di stage}
+			\end{table}
+		
+		\end{center}
+		

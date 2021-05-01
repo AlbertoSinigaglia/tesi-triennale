@@ -1,0 +1,76 @@
+% !TEX encoding = UTF-8
+% !TEX TS-program = pdflatex
+% !TEX root = ../tesi.tex
+
+%**************************************************************
+\chapter{Introduzione}
+\label{cap:introduzione}
+%**************************************************************
+
+Il seguente capitolo vuole introdurre brevemente il progetto affrontato e l'azienda ospitante ideatrice di esso. \\
+
+
+
+\iffalse
+\noindent Esempio di utilizzo di un termine nel glossario \\
+\gls{api}. \\
+\noindent Esempio di citazione in linea \\
+\cite{site:agile-manifesto}. \\
+\noindent Esempio di citazione nel pie' di pagina \\
+citazione\footcite{womak:lean-thinking} \\
+\fi
+
+
+%**************************************************************
+\section{L'azienda}
+
+\par EsignWorld è un'azienda italiana facente parte del gruppo Euronovate, gruppo del settore IT che conta circa 120 collaboratori, con sede centrale in Svizzera con varie sedi in Spagna, Italia, Romania e Cina. 
+\newline
+\newline
+\par EsignWorld si occupa di sviluppare e progettare soluzioni complesse nell'ambito della digital identity, digital signature e digital onboarding, sia software che hardware riguardanti i processi di dematerializzazione all'interno delle aziende.
+\newline
+\newline
+\par Durante lo stage ci si andrà a interfacciare con Redmine, che per quanto non è un prodotto sviluppato direttamente da Euronovate, è utilizzato internamente per la pianificazione di progetti e per il tracciamento delle segnalazioni di bug.
+\newline
+\begin{figure}[!h] 
+	\centering 
+	\includegraphics[width=0.5\columnwidth]{logo-azienda.png} 
+	\caption{Logo dell'azienda}
+\end{figure}
+\begin{figure}[!h] 
+	\centering 
+	\includegraphics[width=0.5\columnwidth]{logo-redmine.png} 
+	\caption{Logo di Redmine}
+\end{figure}
+
+%**************************************************************
+\section{L'idea}
+
+Lo stage consiste nello sviluppo di un prodotto software per il monitoraggio delle segnalazioni, con conseguente la notifica in caso di violazioni dei service level agreement stipulati tra l'azienda e i clienti.\\
+Per raggiungere tale obiettivo, ci si appoggerà a Redmine, software adottato dall'azienda per la gestione delle segnalazioni, per l'ottenimento dei dati necessari alle analisi. Redmine infatti raccoglie tutti i dati fondamentali, quali segnalazioni, tempo dedicato per ogni task e un log di tutti i cambiamenti avvenuti. \\
+Il prodotto periodicamente andrà quindi a scaricare gli aggiornamenti da Redmine, li analizzerà, e tramite delle policy predefinite per ogni cliente, andrà a notificare tramite vari canali l'eventuale violazione di esse. \\
+Infine, l'applicativo esporrà un'API per l'ottenimento di informazioni statistiche riguardanti le violazioni. 
+
+%**************************************************************
+\section{Organizzazione del testo}
+
+\begin{description}
+    \item[{\hyperref[cap:processi-metodologie]{Il secondo capitolo}}] descrive ...
+    
+    \item[{\hyperref[cap:descrizione-stage]{Il terzo capitolo}}] approfondisce ...
+    
+    \item[{\hyperref[cap:analisi-requisiti]{Il quarto capitolo}}] approfondisce ...
+    
+    \item[{\hyperref[cap:progettazione-codifica]{Il quinto capitolo}}] approfondisce ...
+    
+    \item[{\hyperref[cap:verifica-validazione]{Il sesto capitolo}}] approfondisce ...
+    
+    \item[{\hyperref[cap:conclusioni]{Nel settimo capitolo}}] descrive ...
+\end{description}
+
+Riguardo la stesura del testo, relativamente al documento sono state adottate le seguenti convenzioni tipografiche:
+\begin{itemize}
+	\item gli acronimi, le abbreviazioni e i termini ambigui o di uso non comune menzionati vengono definiti nel glossario, situato alla fine del presente documento;
+	\item per la prima occorrenza dei termini riportati nel glossario viene utilizzata la seguente nomenclatura: \emph{parola}\glsfirstoccur;
+	\item i termini in lingua straniera o facenti parti del gergo tecnico sono evidenziati con il carattere \emph{corsivo}.
+\end{itemize}
