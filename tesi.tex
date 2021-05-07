@@ -40,6 +40,21 @@
 %**************************************************************
 % Importazione package
 %************************************************************** 
+\usepackage[table, dvipsnames]{xcolor}
+\definecolor{red}{rgb}{0.6,0,0}
+\definecolor{blue}{rgb}{0,0,0.6}
+\definecolor{green}{rgb}{0,0.8,0}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+\definecolor{footer-gray}{HTML}{808080}
+\definecolor{light-gray}{gray}{0.6} 
+\definecolor{light-grayer}{gray}{0.75} 
+\definecolor{lighter-grayer}{gray}{0.85} 
+\definecolor{lightest-grayest}{gray}{0.94} 
+\definecolor{codegreen}{rgb}{0,0.4,0.2}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.96}
+
 
 \PassOptionsToPackage{dvipsnames}{xcolor} % colori PDF/A
 
@@ -117,8 +132,21 @@
                                         % 3. compilare ancora tesi.tex.
 
 \usepackage{multirow,tabularx}
+\usepackage{geometry}
+\geometry{
+	margin=2.0in,
+	top=30mm, % NON TOCCARE
+	bottom=30mm,
+	left=30mm,
+	right=35mm
+}
+
 
 \input{tesi-config}                     % file con le impostazioni personali
+\newcommand{\gloxy}[1]{\emph{#1}$_G$}
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.4}
+
 
 \begin{document}
 %**************************************************************
