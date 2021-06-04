@@ -22,11 +22,11 @@
 % PDF/A filecontents 
 \RequirePackage{filecontents}
 \begin{filecontents*}{\jobname.xmpdata}
-  \Title{Document’s title}
-  \Author{Author’s name}
+  \Title{Realizzazione di un engine di monitoraggio delle segnalazioni per la notifica di violazioni dei service level agreement}
+  \Author{Sinigaglia Alberto}
   \Language{it-IT}
-  \Subject{The abstract, or short description.}
-  \Keywords{keyword1\sep keyword2\sep keyword3}
+  \Subject{Realizzazione di un engine di monitoraggio delle segnalazioni per la notifica di violazioni dei service level agreement}
+  \Keywords{Service Level Agreement\sep Redmine\sep Quality Assurence\sep Rest API \sep Notification System}
 \end{filecontents*}
 
 \documentclass[10pt,                    % corpo del font principale
@@ -146,6 +146,14 @@
 \newcommand{\gloxy}[1]{\emph{#1}$_G$}
 \setlength{\tabcolsep}{10pt}
 \renewcommand{\arraystretch}{1.4}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
 
 
 \begin{document}
@@ -171,9 +179,11 @@
 \input{capitoli/capitolo-4}             % Concept Preview
 \input{capitoli/capitolo-5}             % Product Prototype
 \input{capitoli/capitolo-6}             % Product Design Freeze e SOP
-\input{capitoli/capitolo-7}             % Conclusioni
-\appendix                               
-\input{capitoli/capitolo-A}             % Appendice A
+\input{capitoli/capitolo-7}             % Documentazione
+\input{capitoli/capitolo-8}             % Conclusioni
+% \appendix                               
+% \input{capitoli/capitolo-A}             % Appendice A
+\input{capitoli/glossario}             % Appendice A
 
 %**************************************************************
 % Materiale finale

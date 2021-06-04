@@ -7,11 +7,11 @@
 \label{cap:analisi-requisiti}
 %**************************************************************
 
-\intro{Breve introduzione al capitolo}\\
+\intro{In questo capitolo viene esposta l'analisi dei requisiti effettutata durante lo stage, nella quale si descrivono le funzionalità e i requisiti identificati.}\\
 \section{Analisi del prodotto}
 	\subsection{Descrizione del prodotto}
 		\subsubsection{Contesto}
-			Il prodotto sarà utilizzato internamente dall'azienda Euronovate per il monitoraggio della validità delle \gloxy{S.L.A.}, e per un analisi statistica delle segnalazioni aperte da \gloxy{Customers}.
+			Il prodotto sarà utilizzato internamente dall'azienda Euronovate per il monitoraggio della validità delle \gloxy{S.L.A.}, e per un'analisi statistica delle segnalazioni aperte da \gloxy{Customers}.
 		\subsubsection{Funzionalità} 
 			Il prodotto dovrà interfacciarsi con il software \gloxy{Redmine}, già utilizzato dall'azienda per la raccolta delle segnalazioni da parte dei clienti, per l'ottenimento dei dati, i quali poi dovranno essere analizzati e in caso di violazioni, dovranno essere predisposti diversi canali di notifica, per la segnalazione della violazione.\\
 			Infine, i dati saranno salvati in una base di dati, ed esposti tramite un \gloxy{API} con un fine di analisi statistica di essi.
@@ -47,7 +47,7 @@ Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.
 I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
 Essendo il progetto incentrato sullo sviluppo dell'engine, le interazioni da parte dell'utilizzatore sono ovviamente ridotte allo stretto necessario. Per questo motivo i diagrammi d'uso risultano semplici e in numero ridotto.\\
 
-Ogni caso d’uso ha un codice gerarchico ed univoco che lo identifica, nella forma:
+\noindent Ogni caso d’uso ha un codice gerarchico ed univoco che lo identifica, nella forma:
 \begin{center}
 	\textbf{UC<CodicePadre>.<CodiceFiglio>}
 \end{center}
@@ -56,8 +56,10 @@ Il codice progressivo può includere diversi livelli di gerarchia separati da un
 \subsection{Attori}
 Gli attori individuati dopo un’attenta analisi sono i seguenti:
 
+
 \begin{center}
 	\includegraphics[keepaspectratio = true, width=15cm]{immagini/actors.png}
+	\captionof{figure}{Attori individuati}
 \end{center}
 
 \subsubsection{Redmine}
@@ -76,6 +78,7 @@ Con Internal System si vuole identificare la piattaforma ENTicketEngine stessa.
 Gli use case identificati per questo sistema possono essere riassunti mediale il seguente diagramma UML:
 \begin{center}
 	\includegraphics[keepaspectratio = true, width=15cm]{immagini/uc/1.png}
+	\captionof{figure}{Use Case sistema di ottenimento dati}
 \end{center}
 \subsubsection{UC1 - Connessione a Redmine}
 \begin{itemize}
@@ -105,12 +108,13 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \subsubsection{UC3 - Ottenimento informazioni da Redmine}
 \begin{center}
 	\includegraphics[keepaspectratio = true, width=15cm]{immagini/uc/2.png}
+	\captionof{figure}{Sottocasi d'uso UC3}
 \end{center}
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
 	\item \textbf{attore secondario}: \gloxy{Redmine};
 	\item \textbf{descrizione}: l'engine vuole ottenere le informazioni da \gloxy{Redmine};
-	\item \textbf{precondizione}: l'engine ha una connessione disponibile verso il server \gloxy{Redmine} ed è autenticato presso di esso;
+	\item \textbf{precondizione}: l'engine ha una connessione disponibile verso il server \gloxy{Redmine} ed è autenticato presso esso;
 	\item \textbf{postcondizione}: il sistema ottiene i dati richiesti da \gloxy{Redmine};
 	\item \textbf{scenario principale}: 
 	\begin{enumerate}
@@ -123,7 +127,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 	\item \textbf{attore primario}: Internal System;
 	\item \textbf{attore secondario}: \gloxy{Redmine};
 	\item \textbf{descrizione}: l'engine vuole ottenere i \gloxy{Customers}  da \gloxy{Redmine};
-	\item \textbf{precondizione}: l'engine ha una connessione disponibile verso il server \gloxy{Redmine} ed è autenticato presso di esso;
+	\item \textbf{precondizione}: l'engine ha una connessione disponibile verso il server \gloxy{Redmine} ed è autenticato presso esso;
 	\item \textbf{postcondizione}: il sistema ottiene i \gloxy{Customers}  da \gloxy{Redmine};
 	\item \textbf{scenario principale}: 
 	\begin{enumerate}
@@ -136,7 +140,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 	\item \textbf{attore primario}: Internal System;
 	\item \textbf{attore secondario}: \gloxy{Redmine};
 	\item \textbf{descrizione}: l'engine vuole ottenere i Ticket da \gloxy{Redmine};
-	\item \textbf{precondizione}: l'engine ha una connessione disponibile verso il server \gloxy{Redmine} ed è autenticato presso di esso;
+	\item \textbf{precondizione}: l'engine ha una connessione disponibile verso il server \gloxy{Redmine} ed è autenticato presso esso;
 	\item \textbf{postcondizione}: il sistema ottiene i ticket da \gloxy{Redmine};
 	\item \textbf{scenario principale}: 
 	\begin{enumerate}
@@ -148,15 +152,17 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 Gli use case identificati per questo sistema possono essere riassunti mediale il seguente diagramma UML:
 \begin{center}
 	\includegraphics[keepaspectratio = true, width=15cm]{immagini/uc/3.png}
+		\captionof{figure}{Use Case sistema analisi dati}
 \end{center}
 \subsubsection{UC4 - Configurazione dinamica dei Customers}
 \begin{center}
 	\includegraphics[keepaspectratio = true, width=15cm]{immagini/uc/4.png}
+		\captionof{figure}{Sottocasi d'uso UC4}
 \end{center}
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
 	\item \textbf{descrizione}: il sistema dovrà disporre di un metodo di configurazione dinamica dei vati \gloxy{Customers} ;
-	\item \textbf{precondizione}: il sistema è uno stato pronto per leggere la configurazione;
+	\item \textbf{precondizione}: il sistema è in uno stato pronto per leggere la configurazione;
 	\item \textbf{postcondizione}: il sistema ha letto la configurazione correttamente;
 	\item \textbf{scenario principale}: 
 	\begin{enumerate}
@@ -201,7 +207,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
 	\item \textbf{descrizione}: il sistema dovrà poter analizzare i dati basandoli sulle configurazioni;
-	\item \textbf{precondizione}: il sistema è uno stato pronto per leggere la configurazione;
+	\item \textbf{precondizione}: il sistema è in uno stato pronto per leggere la configurazione;
 	\item \textbf{postcondizione}: il sistema ha letto la configurazione correttamente;
 	\item \textbf{scenario principale}: 
 	\begin{enumerate}
@@ -224,6 +230,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 Gli use case identificati per questo sistema possono essere riassunti mediale il seguente diagramma UML:
 \begin{center}
 	\includegraphics[keepaspectratio = true, width=15cm]{immagini/uc/5.png}
+		\captionof{figure}{Use Case sistema di notifica}
 \end{center}
 \subsubsection{UC7 - Invio notifica}
 \begin{itemize}
@@ -277,6 +284,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 
 \begin{center}
 	\includegraphics[keepaspectratio = true, width=15cm]{immagini/uc/6.png}
+		\captionof{figure}{Sottocasi d'uso UC9}
 \end{center}
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
@@ -317,7 +325,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
 	\item \textbf{descrizione}: iIl sistema dovrà permettere di specificare che urgenza usare per la notifica di ogni \gloxy{Customer}; 
-	\item \textbf{precondizione}: il sistema ha trovato una potenziale violazione delle \gloxy{S.L.A.} e il \gloxy{Customer} proprietario ha una urgenza associata;
+	\item \textbf{precondizione}: il sistema ha trovato una potenziale violazione delle \gloxy{S.L.A.} e il \gloxy{Customer} proprietario ha un'urgenza associata;
 	\item \textbf{postcondizione}: il sistema ha inviato la notifica con l'urgenza associata;
 	\item \textbf{scenario principale}: 
 	\begin{enumerate}
@@ -328,7 +336,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \paragraph{UC9.4 -  Gestione gruppi telegram da usare}
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
-	\item \textbf{descrizione}: iIl sistema dovrà permettere di specificare che gruppi \gloxy{Telegram} usare per la notifica di ogni \gloxy{Customer}; 
+	\item \textbf{descrizione}: il sistema dovrà permettere di specificare che gruppi \gloxy{Telegram} usare per la notifica di ogni \gloxy{Customer}; 
 	\item \textbf{precondizione}: il sistema ha trovato una potenziale violazione delle \gloxy{S.L.A.} e il \gloxy{Customer} proprietario ha dei gruppi \gloxy{Telegram} associati;
 	\item \textbf{postcondizione}: il sistema ha inviato la notifica ai gruppi specificati;
 	\item \textbf{scenario principale}: 
@@ -354,6 +362,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 Gli use case identificati per questo sistema possono essere riassunti mediale il seguente diagramma UML:
 \begin{center}
 	\includegraphics[keepaspectratio = true, width=15cm]{immagini/uc/7.png}
+		\captionof{figure}{Use Case sistema di notifica}
 \end{center}
 \subsubsection{UC10 - Ottenimento issue}
 \begin{itemize}
@@ -370,12 +379,13 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \subsubsection{UC11 - Filtraggio issue}
 \begin{center}
 	\includegraphics[keepaspectratio = true, width=15cm]{immagini/uc/8.png}
+		\captionof{figure}{Sottocasi d'uso UC11}
 \end{center}
 \begin{itemize}
 	\item \textbf{attore primario}: Client;
-	\item \textbf{descrizione}: il client vuole ottenere le \gloxy{issue} filtrare rispetto alcuni criteri;
+	\item \textbf{descrizione}: il client vuole ottenere le \gloxy{issue} filtrate rispetto alcuni criteri;
 	\item \textbf{precondizione}: il sistema è pronto per ricevere richieste;
-	\item \textbf{postcondizione}:  il client riceve le \gloxy{issue} filtrare rispetto ai parametri inviati;
+	\item \textbf{postcondizione}:  il client riceve le \gloxy{issue} filtrate rispetto ai parametri inviati;
 	\item \textbf{scenario principale}: 
 	\begin{enumerate}
 		\item il client invia una richiesta di ottenimento \gloxy{issue};
@@ -387,11 +397,11 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 	\item \textbf{attore primario}: Client;
 	\item \textbf{descrizione}: iIl sistema dovrà permettere di specificare la data minima per il filtraggio delle \gloxy{issue};
 	\item \textbf{precondizione}:  il sistema è pronto per ricevere richieste;
-	\item \textbf{postcondizione}: il client riceve le \gloxy{issue} filtrare rispetto alla data di apertura (successiva alla data specificata nella richiesta);
+	\item \textbf{postcondizione}: il client riceve le \gloxy{issue} filtrate rispetto alla data di apertura (successiva alla data specificata nella richiesta);
 	\item \textbf{scenario principale}: 
 	\begin{enumerate}
 		\item  il client invia una richiesta di ottenimento \gloxy{issue} specificando una data di apertura minima;
-		\item  il server risponde con la lista delle \gloxy{issue} richieste filtrare rispetto alla data di apertura (maggiore di quella richiesta).
+		\item  il server risponde con la lista delle \gloxy{issue} richieste filtrate rispetto alla data di apertura (maggiore di quella richiesta).
 	\end{enumerate}
 \end{itemize}
 \paragraph{UC11.2 - Filtro per data massima}
@@ -399,11 +409,11 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 	\item \textbf{attore primario}: Client;
 	\item \textbf{descrizione}: iIl sistema dovrà permettere di specificare la data massima per il filtraggio delle \gloxy{issue};
 	\item \textbf{precondizione}:  il sistema è pronto per ricevere richieste;
-	\item \textbf{postcondizione}: il client riceve le \gloxy{issue} filtrare rispetto alla data di apertura (precedente alla data specificata nella richiesta);
+	\item \textbf{postcondizione}: il client riceve le \gloxy{issue} filtrate rispetto alla data di apertura (precedente alla data specificata nella richiesta);
 	\item \textbf{scenario principale}: 
 	\begin{enumerate}
 		\item  il client invia una richiesta di ottenimento \gloxy{issue} specificando una data di apertura massima;
-		\item  il server risponde con la lista delle \gloxy{issue} richieste filtrare rispetto alla data di apertura (minore di quella richiesta).
+		\item  il server risponde con la lista delle \gloxy{issue} richieste filtrate rispetto alla data di apertura (minore di quella richiesta).
 	\end{enumerate}
 \end{itemize}
 \paragraph{UC11.3 - Filtro per Customer}
@@ -411,11 +421,11 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 	\item \textbf{attore primario}: Client;
 	\item \textbf{descrizione}: iIl sistema dovrà permettere di specificare il \gloxy{Customer} di cui si vuole ottenere le \gloxy{issue};
 	\item \textbf{precondizione}:  il sistema è pronto per ricevere richieste;
-	\item \textbf{postcondizione}: il client riceve le \gloxy{issue} filtrare rispetto al \gloxy{Customer} richiesto (precedente alla data specificata nella richiesta);
+	\item \textbf{postcondizione}: il client riceve le \gloxy{issue} filtrate rispetto al \gloxy{Customer} richiesto (precedente alla data specificata nella richiesta);
 	\item \textbf{scenario principale}: 
 	\begin{enumerate}
 		\item  il client invia una richiesta di ottenimento \gloxy{issue} specificando un \gloxy{Customer}; 
-		\item  il server risponde con la lista delle \gloxy{issue} richieste filtrare rispetto al \gloxy{Customer} richiesto.
+		\item  il server risponde con la lista delle \gloxy{issue} richieste filtrate rispetto al \gloxy{Customer} richiesto.
 	\end{enumerate}
 \end{itemize}
 
@@ -520,7 +530,7 @@ La classificazione andrà a specificare l'obbligatorietà del requisito, e potr�
 		R3.2-O & L'engine dovrà permettere una configurazione dinamica della durata massima di risoluzione per i ticket di ogni \gloxy{Customer} \\ \hline
 		R4-O & L'engine dovrà rendere disponibili canali di notifica per la segnalazione di violazioni delle \gloxy{S.L.A.} \\ \hline
 		R4.1-D & L'engine dovrà rendere disponibile Email come canale per la segnalazione di violazioni delle \gloxy{S.L.A.} \\ \hline
-		R4.1-D & L'engine dovrà rendere disponibile la possibilità di specificare un'email come canale per la segnalazione di violazioni delle \gloxy{S.L.A.}customizzabile per ogni \gloxy{Customer}  \\ \hline
+		R4.1-D & L'engine dovrà rendere disponibile la possibilità di specificare un'email come canale per la segnalazione di violazioni delle \gloxy{S.L.A.} customizzabile per ogni \gloxy{Customer}  \\ \hline
 		R4.2-D & L'engine dovrà rendere disponibile \gloxy{Telegram}  come canale per la segnalazione di violazioni delle \gloxy{S.L.A.} \\ \hline
 		R4.3-D & L'engine dovrà rendere disponibile  la possibilità di specificare un gruppo \gloxy{Telegram}  come canale per la segnalazione di violazioni delle \gloxy{S.L.A.} customizzabile per ogni \gloxy{Customer}  \\ \hline
 		R5-O & L'engine dovrà notificare al responsabile designato potenziali violazioni delle \gloxy{S.L.A.} \\ \hline
@@ -542,13 +552,13 @@ La classificazione andrà a specificare l'obbligatorietà del requisito, e potr�
 		R16-D & L'\gloxy{API} dovrà permettere il filtraggio tramite data minima dove possibile\\ \hline
 		R17-D & L'\gloxy{API} dovrà permettere il filtraggio tramite data massima dove possibile\\ \hline
 		R18-D & L'\gloxy{API} dovrà permettere di raggruppare i dati richiesti dove possibile\\ \hline
-		R18.1-D & L'\gloxy{API} dovrà permettere raggruppare i dati richiesti per giorno dove possibile\\ \hline
-		R18.2-D & L'\gloxy{API} dovrà permettere raggruppare i dati richiesti per settimana dove possibile\\ \hline
-		R18.3-D & L'\gloxy{API} dovrà permettere raggruppare i dati richiesti per mese dove possibile\\ \hline
+		R18.1-D & L'\gloxy{API} dovrà permettere di raggruppare i dati richiesti per giorno dove possibile\\ \hline
+		R18.2-D & L'\gloxy{API} dovrà permettere di raggruppare i dati richiesti per settimana dove possibile\\ \hline
+		R18.3-D & L'\gloxy{API} dovrà permettere di raggruppare i dati richiesti per mese dove possibile\\ \hline
 		
 		
 		R19-D & L'\gloxy{API} dovrà fornire la possibilità di sapere per ogni \gloxy{Customer} quanti \gloxy{Ticket} ha avuto    \\ \hline
-		R20-D & L'\gloxy{API} dovrà fornire la possibilità di sapere per ogni \gloxy{Customer} quante violazioni ha avuto   \\ \hline
+		R20-D & L'\gloxy{API} dovrà fornire la possibilità di sapere per ogni \gloxy{Customer} quante violazioni ha subito   \\ \hline
 		R21-D & L'\gloxy{API} dovrà fornire la possibilità di sapere per ogni \gloxy{Ticket} quanto tempo in carico è stato a Euronovate e quanto al cliente\\ \hline
 		R22-D & L'\gloxy{API} dovrà fornire la possibilità di ottenere il tempo medio di risoluzione di ticket\\ \hline
 		R23-D & L'\gloxy{API} dovrà fornire la possibilità di ottenere il tempo medio di presa in carico di ticket\\ \hline
