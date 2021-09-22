@@ -13,26 +13,26 @@
 		\subsubsection{Contesto}
 			Il prodotto sarà utilizzato internamente dall'azienda Euronovate per il monitoraggio della validità delle \gloxy{S.L.A.}, e per un'analisi statistica delle segnalazioni aperte da \gloxy{Customers}.
 		\subsubsection{Funzionalità} 
-			Il prodotto dovrà interfacciarsi con il software \gloxy{Redmine}, già utilizzato dall'azienda per la raccolta delle segnalazioni da parte dei clienti, per l'ottenimento dei dati, i quali poi dovranno essere analizzati e in caso di violazioni, dovranno essere predisposti diversi canali di notifica, per la segnalazione della violazione.\\
+			Il prodotto deve interfacciarsi con il software \gloxy{Redmine}, già utilizzato dall'azienda per la raccolta delle segnalazioni da parte dei clienti, per l'ottenimento dei dati, i quali poi dovranno essere analizzati e in caso di violazioni, dovranno essere predisposti diversi canali di notifica, per la segnalazione della violazione.\\
 			Infine, i dati saranno salvati in una base di dati, ed esposti tramite un \gloxy{API} con un fine di analisi statistica di essi.
 		\subsection{Analisi della struttura} 
 			Il prodotto prevede principalmente 4 sistemi: l'\gloxy{API} di pubblicazione, il sistema di ottenimento dei dati, il sistema di analisi, ed infine il sistema di notifica.
 		\subsubsection{Sistema ottenimento dati} 
-			Questo sistema è responsabile dell'ottenimento dei dati da \gloxy{Redmine}, quali \gloxy{Customers} e \gloxy{Ticket} aperti da clienti. \\
-			Tale quindi dovrà autenticarsi su \gloxy{Redmine}, ottenere i dati, e manipolarli in modo da prevedere una loro semplice integrazione con gli altri servizi.
+			Il sistema ottenimento dati sistema è responsabile dell'ottenimento dei dati da \gloxy{Redmine}, quali \gloxy{Customers} e \gloxy{Ticket} aperti da clienti. \\
+			Questo sistema deve autenticarsi su \gloxy{Redmine}, ottenere i dati, e manipolarli in modo da prevedere una loro semplice integrazione con gli altri servizi.
 			Tale download dei dati verrà effettuato in batch, quindi periodicamente l'engine andrà a scaricarsi gli aggiornamenti. \\
-			Dovrà infine esser possibile migrare a un servizio di segnalazione esterno diverso da \gloxy{Redmine}, senza andare a modificare gli altri sistemi.
+			deve infine esser possibile migrare a un servizio di segnalazione esterno diverso da \gloxy{Redmine}, senza andare a modificare gli altri sistemi.
 		\subsubsection{Sistema analisi dati}
-			Questo sistema sarà responsabile dell'analisi dei dati e delle \gloxy{S.L.A.}. definite con i vari clienti. \\
-			Sarà quindi necessario predisporre un sistema di configurazione delle \gloxy{S.L.A.}. dei clienti dinamico, che non richieda il riavvio del sistema. \\
-			Inoltre, una volta analizzato dati e \gloxy{S.L.A.}., sarà responsabile  della comunicazione con il servizio di notifica per la segnalazione di violazioni.
+			Il sistema analisi dati è responsabile dell'analisi dei dati e delle \gloxy{S.L.A.}. definite con i vari clienti. \\
+			È quindi stato necessario predisporre un sistema di configurazione delle \gloxy{S.L.A.}. dei clienti dinamico, che non richieda il riavvio del sistema. \\
+			Inoltre, una volta analizzato dati e \gloxy{S.L.A.}., è responsabile  della comunicazione con il servizio di notifica per la segnalazione di violazioni.
 		\subsubsection{Sistema di notifica}
-			Questo sistema sarà responsabile della notifica delle violazioni ai responsabili.\\
-			Sarà quindi necessario predisporre vari mezzi di notifica, configurabili dinamicamente, che permettano la segnalazione a chi di dovere della potenziale violazione delle \gloxy{S.L.A.}., in base a quanto grave essa sia.
+			Il sistema di notifica sarà responsabile della notifica delle violazioni ai responsabili.\\
+			È stato quindi necessario predisporre vari mezzi di notifica, configurabili dinamicamente, che permettano la segnalazione a chi di dovere della potenziale violazione delle \gloxy{S.L.A.}., in base a quanto grave essa sia.
 		\subsubsection{Sistema di pubblicazione}
-			Questo sistema sarà responsabile della pubblicazione dei dati gestiti verso l'esterno.\\
-			Sarà quindi necessario predisporre un \gloxy{API} tramite la quale gli interessati potranno accedere alle informazioni gestite dall'engine, quali issue, customer e violazioni. \\
-			Sarà desiderabile permettere di definire se il risultato lo si vuole dalla base di dati attuale (e quindi aggiornato all'ultimo update), o lo si vuole esattamente fino a quel momento, e quindi richiedendo un aggiornamento immediato da \gloxy{Redmine}.
+			Il sistema di pubblicazione è responsabile della pubblicazione dei dati gestiti verso l'esterno.\\
+			È quindi stato necessario predisporre un \gloxy{API} tramite la quale gli interessati potranno accedere alle informazioni gestite dall'engine, quali issue, customer e violazioni. \\
+			È desiderabile permettere di definire se il risultato lo si vuole dalla base di dati attuale (e quindi aggiornato all'ultimo update), o lo si vuole esattamente fino a quel momento, e quindi richiedendo un aggiornamento immediato da \gloxy{Redmine}.
 		
 
 
@@ -42,7 +42,7 @@
 
 \section{Casi d'uso}
 
-In questa sezione verranno elencati i casi d'uso rilevati nell'analisi dei requisiti del progetto.\\
+In questa sezione sono elencati i casi d'uso rilevati nell'analisi dei requisiti del progetto.\\
 Per lo studio dei casi di utilizzo del prodotto sono stati creati dei diagrammi.\\
 I diagrammi dei casi d'uso (in inglese \emph{Use Case Diagram}) sono diagrammi di tipo \gls{uml} dedicati alla descrizione delle funzioni o servizi offerti da un sistema, così come sono percepiti e utilizzati dagli attori che interagiscono col sistema stesso.
 Essendo il progetto incentrato sullo sviluppo dell'engine, le interazioni da parte dell'utilizzatore sono ovviamente ridotte allo stretto necessario. Per questo motivo i diagrammi d'uso risultano semplici e in numero ridotto.\\
@@ -66,7 +66,7 @@ Gli attori individuati dopo un’attenta analisi sono i seguenti:
 \gloxy{Redmine} rappresenta il sistema di gestione di progetto e tracciamento delle segnalazioni utilizzato dall'azienda.
 \subsubsection{Telegram}
 \gloxy{Telegram} rappresenta uno dei canali di notifica identificati per la segnalazione delle violazioni.
-\subsubsection{Server SMPT}
+\subsubsection{Server SMTP}
 L'email rappresenta uno dei canali di notifica identificati per la segnalazione delle violazioni.
 \subsubsection{Client}
 Con Client si vuole identificare qualsiasi attore capace di consumare l'\gloxy{API}  (come un Front-end, un altro server ...).
@@ -75,7 +75,7 @@ Con Internal System si vuole identificare la piattaforma ENTicketEngine stessa.
 
 
 \subsection{Sistema di ottenimento dati}
-Gli use case identificati per questo sistema possono essere riassunti mediale il seguente diagramma UML:
+Gli use case identificati per questo sistema possono essere riassunti mediante il seguente diagramma UML:
 \begin{center}
 	\includegraphics[keepaspectratio = true, width=15cm]{immagini/uc/1.png}
 	\captionof{figure}{Use Case sistema di ottenimento dati}
@@ -127,7 +127,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 	\item \textbf{attore primario}: Internal System;
 	\item \textbf{attore secondario}: \gloxy{Redmine};
 	\item \textbf{descrizione}: l'engine vuole ottenere i \gloxy{Customers}  da \gloxy{Redmine};
-	\item \textbf{precondizione}: l'engine ha una connessione disponibile verso il server \gloxy{Redmine} ed è autenticato presso esso;
+	\item \textbf{precondizione}: l'engine ha una connessione disponibile verso il server \gloxy{Redmine} ed è autenticato presso di esso;
 	\item \textbf{postcondizione}: il sistema ottiene i \gloxy{Customers}  da \gloxy{Redmine};
 	\item \textbf{scenario principale}: 
 	\begin{enumerate}
@@ -140,7 +140,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 	\item \textbf{attore primario}: Internal System;
 	\item \textbf{attore secondario}: \gloxy{Redmine};
 	\item \textbf{descrizione}: l'engine vuole ottenere i Ticket da \gloxy{Redmine};
-	\item \textbf{precondizione}: l'engine ha una connessione disponibile verso il server \gloxy{Redmine} ed è autenticato presso esso;
+	\item \textbf{precondizione}: l'engine ha una connessione disponibile verso il server \gloxy{Redmine} ed è autenticato presso di esso;
 	\item \textbf{postcondizione}: il sistema ottiene i ticket da \gloxy{Redmine};
 	\item \textbf{scenario principale}: 
 	\begin{enumerate}
@@ -161,7 +161,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \end{center}
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
-	\item \textbf{descrizione}: il sistema dovrà disporre di un metodo di configurazione dinamica dei vati \gloxy{Customers} ;
+	\item \textbf{descrizione}: il sistema deve disporre di un metodo di configurazione dinamica dei vati \gloxy{Customers} ;
 	\item \textbf{precondizione}: il sistema è in uno stato pronto per leggere la configurazione;
 	\item \textbf{postcondizione}: il sistema ha letto la configurazione correttamente;
 	\item \textbf{scenario principale}: 
@@ -206,7 +206,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \subsubsection{UC5 - Verifica delle violazioni}
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
-	\item \textbf{descrizione}: il sistema dovrà poter analizzare i dati basandoli sulle configurazioni;
+	\item \textbf{descrizione}: il sistema deve poter analizzare i dati basandoli sulle configurazioni;
 	\item \textbf{precondizione}: il sistema è in uno stato pronto per leggere la configurazione;
 	\item \textbf{postcondizione}: il sistema ha letto la configurazione correttamente;
 	\item \textbf{scenario principale}: 
@@ -217,7 +217,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \subsubsection{UC6 - Salvataggio dati per analisi future}
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
-	\item \textbf{descrizione}: il sistema dovrà poter salvare i dati per analisi future;
+	\item \textbf{descrizione}: il sistema deve poter salvare i dati per analisi future;
 	\item \textbf{precondizione}: il sistema ha ricevuto dei dati non ancora presenti nella base di dati;
 	\item \textbf{postcondizione}: il sistema ha una base di dati aggiornata con i dati appena ricevuti;
 	\item \textbf{scenario principale}: 
@@ -300,7 +300,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \paragraph{UC9.1 -  Gestione canali di notifica per Customer}
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
-	\item \textbf{descrizione}: iIl sistema dovrà permettere di specificare che canali usare per la notifica di ogni \gloxy{Customer}; 
+	\item \textbf{descrizione}: iIl sistema deve permettere di specificare che canali usare per la notifica di ogni \gloxy{Customer}; 
 	\item \textbf{precondizione}: il sistema ha trovato una potenziale violazione delle \gloxy{S.L.A.} e il \gloxy{Customer} proprietario ha dei canali di notifica associati;
 	\item \textbf{postcondizione}: il sistema ha notificato chi di dovere tramite i canali specificati della potenziale violazione;
 	\item \textbf{scenario principale}: 
@@ -312,7 +312,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \paragraph{UC9.2 -  Gestione cadenza di notifica per Customer}
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
-	\item \textbf{descrizione}: iIl sistema dovrà permettere di specificare che cadenza usare per la notifica di ogni \gloxy{Customer}; 
+	\item \textbf{descrizione}: iIl sistema deve permettere di specificare che cadenza usare per la notifica di ogni \gloxy{Customer}; 
 	\item \textbf{precondizione}: il sistema ha trovato una potenziale violazione delle \gloxy{S.L.A.} e il \gloxy{Customer} proprietario ha una cadenza di notifica associata;
 	\item \textbf{postcondizione}: il sistema ha verificato se la cadenza è valida e in caso inviato la notifica;
 	\item \textbf{scenario principale}: 
@@ -324,7 +324,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \paragraph{UC9.3 -  Gestione urgenza di notifica per Customer}
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
-	\item \textbf{descrizione}: iIl sistema dovrà permettere di specificare che urgenza usare per la notifica di ogni \gloxy{Customer}; 
+	\item \textbf{descrizione}: iIl sistema deve permettere di specificare che urgenza usare per la notifica di ogni \gloxy{Customer}; 
 	\item \textbf{precondizione}: il sistema ha trovato una potenziale violazione delle \gloxy{S.L.A.} e il \gloxy{Customer} proprietario ha un'urgenza associata;
 	\item \textbf{postcondizione}: il sistema ha inviato la notifica con l'urgenza associata;
 	\item \textbf{scenario principale}: 
@@ -336,7 +336,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \paragraph{UC9.4 -  Gestione gruppi telegram da usare}
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
-	\item \textbf{descrizione}: il sistema dovrà permettere di specificare che gruppi \gloxy{Telegram} usare per la notifica di ogni \gloxy{Customer}; 
+	\item \textbf{descrizione}: il sistema deve permettere di specificare che gruppi \gloxy{Telegram} usare per la notifica di ogni \gloxy{Customer}; 
 	\item \textbf{precondizione}: il sistema ha trovato una potenziale violazione delle \gloxy{S.L.A.} e il \gloxy{Customer} proprietario ha dei gruppi \gloxy{Telegram} associati;
 	\item \textbf{postcondizione}: il sistema ha inviato la notifica ai gruppi specificati;
 	\item \textbf{scenario principale}: 
@@ -348,7 +348,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \paragraph{UC9.5 -  Gestione indirizzi email da notificare}
 \begin{itemize}
 	\item \textbf{attore primario}: Internal System;
-	\item \textbf{descrizione}: iIl sistema dovrà permettere di specificare che indirizzi email usare per la notifica di ogni \gloxy{Customer}; 
+	\item \textbf{descrizione}: iIl sistema deve permettere di specificare che indirizzi email usare per la notifica di ogni \gloxy{Customer}; 
 	\item \textbf{precondizione}: il sistema ha trovato una potenziale violazione delle \gloxy{S.L.A.} e il \gloxy{Customer} proprietario ha degli indirizzi email associati;
 	\item \textbf{postcondizione}: il sistema ha inviato la notifica agli indirizzi email specificati;
 	\item \textbf{scenario principale}: 
@@ -395,7 +395,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \paragraph{UC11.1 - Filtro per data minima}
 \begin{itemize}
 	\item \textbf{attore primario}: Client;
-	\item \textbf{descrizione}: iIl sistema dovrà permettere di specificare la data minima per il filtraggio delle \gloxy{issue};
+	\item \textbf{descrizione}: iIl sistema deve permettere di specificare la data minima per il filtraggio delle \gloxy{issue};
 	\item \textbf{precondizione}:  il sistema è pronto per ricevere richieste;
 	\item \textbf{postcondizione}: il client riceve le \gloxy{issue} filtrate rispetto alla data di apertura (successiva alla data specificata nella richiesta);
 	\item \textbf{scenario principale}: 
@@ -407,7 +407,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \paragraph{UC11.2 - Filtro per data massima}
 \begin{itemize}
 	\item \textbf{attore primario}: Client;
-	\item \textbf{descrizione}: iIl sistema dovrà permettere di specificare la data massima per il filtraggio delle \gloxy{issue};
+	\item \textbf{descrizione}: iIl sistema deve permettere di specificare la data massima per il filtraggio delle \gloxy{issue};
 	\item \textbf{precondizione}:  il sistema è pronto per ricevere richieste;
 	\item \textbf{postcondizione}: il client riceve le \gloxy{issue} filtrate rispetto alla data di apertura (precedente alla data specificata nella richiesta);
 	\item \textbf{scenario principale}: 
@@ -419,7 +419,7 @@ Gli use case identificati per questo sistema possono essere riassunti mediale il
 \paragraph{UC11.3 - Filtro per Customer}
 \begin{itemize}
 	\item \textbf{attore primario}: Client;
-	\item \textbf{descrizione}: iIl sistema dovrà permettere di specificare il \gloxy{Customer} di cui si vuole ottenere le \gloxy{issue};
+	\item \textbf{descrizione}: iIl sistema deve permettere di specificare il \gloxy{Customer} di cui si vuole ottenere le \gloxy{issue};
 	\item \textbf{precondizione}:  il sistema è pronto per ricevere richieste;
 	\item \textbf{postcondizione}: il client riceve le \gloxy{issue} filtrate rispetto al \gloxy{Customer} richiesto (precedente alla data specificata nella richiesta);
 	\item \textbf{scenario principale}: 
@@ -523,45 +523,45 @@ La classificazione andrà a specificare l'obbligatorietà del requisito, e potr�
 		\hline
 		\rowcolor{lighter-grayer}
 		\textbf{Requisito} & \textbf{Descrizione} \\ \hline
-		R1-O & L'engine dovrà interfacciarsi con \gloxy{Redmine} per l'ottenimento delle informazioni riguardanti a \gloxy{Customers}  e Issues \\ \hline
-		R2-O & L'engine dovrà potersi autenticare presso \gloxy{Redmine} tramite \gloxy{API key} \\ \hline
-		R3-O & L'engine dovrà permettere una configurazione dinamica delle \gloxy{S.L.A.} per ogni \gloxy{Customer} \\ \hline
-		R3.1-O & L'engine dovrà permettere una configurazione dinamica della durata massima di presa in carico per i ticket di ogni \gloxy{Customer} \\ \hline
-		R3.2-O & L'engine dovrà permettere una configurazione dinamica della durata massima di risoluzione per i ticket di ogni \gloxy{Customer} \\ \hline
-		R4-O & L'engine dovrà rendere disponibili canali di notifica per la segnalazione di violazioni delle \gloxy{S.L.A.} \\ \hline
-		R4.1-D & L'engine dovrà rendere disponibile Email come canale per la segnalazione di violazioni delle \gloxy{S.L.A.} \\ \hline
-		R4.1-D & L'engine dovrà rendere disponibile la possibilità di specificare un'email come canale per la segnalazione di violazioni delle \gloxy{S.L.A.} customizzabile per ogni \gloxy{Customer}  \\ \hline
-		R4.2-D & L'engine dovrà rendere disponibile \gloxy{Telegram}  come canale per la segnalazione di violazioni delle \gloxy{S.L.A.} \\ \hline
-		R4.3-D & L'engine dovrà rendere disponibile  la possibilità di specificare un gruppo \gloxy{Telegram}  come canale per la segnalazione di violazioni delle \gloxy{S.L.A.} customizzabile per ogni \gloxy{Customer}  \\ \hline
-		R5-O & L'engine dovrà notificare al responsabile designato potenziali violazioni delle \gloxy{S.L.A.} \\ \hline
-		R6-D & L'engine dovrà permettere di configurare i vari canali di notifica definiti per la segnalazione di violazioni (e.g. le credenziali per la connessione SMTP)\\ \hline
-		R7-O & L'engine dovrà mettere a disposizione un'\gloxy{API} per la pubblicazione dei dati\\ \hline
-		R7.1-D & L'engine dovrà mettere a disposizione un'\gloxy{API} per la pubblicazione delle issue\\ \hline
-		R7.2-D & L'engine dovrà mettere a disposizione un'\gloxy{API} per la pubblicazione delle violazioni\\ \hline
-		R8-D & L'engine dovrà prevedere un modo per rendere personalizzabile l'intervallo di aggiornamento da \gloxy{Redmine}\\ \hline
-		R9-O & L'engine dovrà permettere una facile migrazione a un sistema di gestione di Ticket diverso da \gloxy{Redmine}\\ \hline
-		R10-O & L'engine dovrà prevedere degli \gloxy{S.L.A.} di default\\ \hline
-		R11-O & L'engine dovrà prevedere la possibilità di categorizzare le violazioni per  “info”, “warning”, “urgent” ed “escalation”\\ \hline
-		R12-O & L'engine dovrà prevedere la possibilità di aggiornare su richiesta i dati su \gloxy{Redmine} tramite \gloxy{API}\\ \hline
-		R13-O & L'engine dovrà prevedere un servizio per esportare dei dati in qualche formato\\ \hline
-		R14-O & L'engine dovrà prevedere un modo per memorizzare localmente gli aggiornamenti ricevuti da \gloxy{Redmine} \\ \hline
-		R15-O & L'engine dovrà prevedere un modo per andare periodicamente a scaricare gli aggiornamenti da \gloxy{Redmine}\\ \hline
+		R1-O & L'engine deve interfacciarsi con \gloxy{Redmine} per l'ottenimento delle informazioni riguardanti a \gloxy{Customers}  e Issues \\ \hline
+		R2-O & L'engine deve potersi autenticare presso \gloxy{Redmine} tramite \gloxy{API key} \\ \hline
+		R3-O & L'engine deve permettere una configurazione dinamica delle \gloxy{S.L.A.} per ogni \gloxy{Customer} \\ \hline
+		R3.1-O & L'engine deve permettere una configurazione dinamica della durata massima di presa in carico per i ticket di ogni \gloxy{Customer} \\ \hline
+		R3.2-O & L'engine deve permettere una configurazione dinamica della durata massima di risoluzione per i ticket di ogni \gloxy{Customer} \\ \hline
+		R4-O & L'engine deve rendere disponibili canali di notifica per la segnalazione di violazioni delle \gloxy{S.L.A.} \\ \hline
+		R4.1-D & L'engine deve rendere disponibile Email come canale per la segnalazione di violazioni delle \gloxy{S.L.A.} \\ \hline
+		R4.1-D & L'engine deve rendere disponibile la possibilità di specificare un'email come canale per la segnalazione di violazioni delle \gloxy{S.L.A.} customizzabile per ogni \gloxy{Customer}  \\ \hline
+		R4.2-D & L'engine deve rendere disponibile \gloxy{Telegram}  come canale per la segnalazione di violazioni delle \gloxy{S.L.A.} \\ \hline
+		R4.3-D & L'engine deve rendere disponibile  la possibilità di specificare un gruppo \gloxy{Telegram}  come canale per la segnalazione di violazioni delle \gloxy{S.L.A.} customizzabile per ogni \gloxy{Customer}  \\ \hline
+		R5-O & L'engine deve notificare al responsabile designato potenziali violazioni delle \gloxy{S.L.A.} \\ \hline
+		R6-D & L'engine deve permettere di configurare i vari canali di notifica definiti per la segnalazione di violazioni (e.g. le credenziali per la connessione SMTP)\\ \hline
+		R7-O & L'engine deve mettere a disposizione un'\gloxy{API} per la pubblicazione dei dati\\ \hline
+		R7.1-D & L'engine deve mettere a disposizione un'\gloxy{API} per la pubblicazione delle issue\\ \hline
+		R7.2-D & L'engine deve mettere a disposizione un'\gloxy{API} per la pubblicazione delle violazioni\\ \hline
+		R8-D & L'engine deve prevedere un modo per rendere personalizzabile l'intervallo di aggiornamento da \gloxy{Redmine}\\ \hline
+		R9-O & L'engine deve permettere una facile migrazione a un sistema di gestione di Ticket diverso da \gloxy{Redmine}\\ \hline
+		R10-O & L'engine deve prevedere degli \gloxy{S.L.A.} di default\\ \hline
+		R11-O & L'engine deve prevedere la possibilità di categorizzare le violazioni per  “info”, “warning”, “urgent” ed “escalation”\\ \hline
+		R12-O & L'engine deve prevedere la possibilità di aggiornare su richiesta i dati su \gloxy{Redmine} tramite \gloxy{API}\\ \hline
+		R13-O & L'engine deve prevedere un servizio per esportare dei dati in qualche formato\\ \hline
+		R14-O & L'engine deve prevedere un modo per memorizzare localmente gli aggiornamenti ricevuti da \gloxy{Redmine} \\ \hline
+		R15-O & L'engine deve prevedere un modo per andare periodicamente a scaricare gli aggiornamenti da \gloxy{Redmine}\\ \hline
 		
 		\rowcolor{light-grayer}
 		\multicolumn{2}{|l|}{\textbf{API}} \\ \hline
-		R16-D & L'\gloxy{API} dovrà permettere il filtraggio tramite data minima dove possibile\\ \hline
-		R17-D & L'\gloxy{API} dovrà permettere il filtraggio tramite data massima dove possibile\\ \hline
-		R18-D & L'\gloxy{API} dovrà permettere di raggruppare i dati richiesti dove possibile\\ \hline
-		R18.1-D & L'\gloxy{API} dovrà permettere di raggruppare i dati richiesti per giorno dove possibile\\ \hline
-		R18.2-D & L'\gloxy{API} dovrà permettere di raggruppare i dati richiesti per settimana dove possibile\\ \hline
-		R18.3-D & L'\gloxy{API} dovrà permettere di raggruppare i dati richiesti per mese dove possibile\\ \hline
+		R16-D & L'\gloxy{API} deve permettere il filtraggio tramite data minima dove possibile\\ \hline
+		R17-D & L'\gloxy{API} deve permettere il filtraggio tramite data massima dove possibile\\ \hline
+		R18-D & L'\gloxy{API} deve permettere di raggruppare i dati richiesti dove possibile\\ \hline
+		R18.1-D & L'\gloxy{API} deve permettere di raggruppare i dati richiesti per giorno dove possibile\\ \hline
+		R18.2-D & L'\gloxy{API} deve permettere di raggruppare i dati richiesti per settimana dove possibile\\ \hline
+		R18.3-D & L'\gloxy{API} deve permettere di raggruppare i dati richiesti per mese dove possibile\\ \hline
 		
 		
-		R19-D & L'\gloxy{API} dovrà fornire la possibilità di sapere per ogni \gloxy{Customer} quanti \gloxy{Ticket} ha avuto    \\ \hline
-		R20-D & L'\gloxy{API} dovrà fornire la possibilità di sapere per ogni \gloxy{Customer} quante violazioni ha subito   \\ \hline
-		R21-D & L'\gloxy{API} dovrà fornire la possibilità di sapere per ogni \gloxy{Ticket} quanto tempo in carico è stato a Euronovate e quanto al cliente\\ \hline
-		R22-D & L'\gloxy{API} dovrà fornire la possibilità di ottenere il tempo medio di risoluzione di ticket\\ \hline
-		R23-D & L'\gloxy{API} dovrà fornire la possibilità di ottenere il tempo medio di presa in carico di ticket\\ \hline
+		R19-D & L'\gloxy{API} deve fornire la possibilità di sapere per ogni \gloxy{Customer} quanti \gloxy{Ticket} ha avuto    \\ \hline
+		R20-D & L'\gloxy{API} deve fornire la possibilità di sapere per ogni \gloxy{Customer} quante violazioni ha subito   \\ \hline
+		R21-D & L'\gloxy{API} deve fornire la possibilità di sapere per ogni \gloxy{Ticket} quanto tempo in carico è stato a Euronovate e quanto al cliente\\ \hline
+		R22-D & L'\gloxy{API} deve fornire la possibilità di ottenere il tempo medio di risoluzione di ticket\\ \hline
+		R23-D & L'\gloxy{API} deve fornire la possibilità di ottenere il tempo medio di presa in carico di ticket\\ \hline
 		
 		
 		
